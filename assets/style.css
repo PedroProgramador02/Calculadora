@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'cursiva', sans-serif;
+    border: 0;
+}
+
+:root {
+    --body: #2ab3a6; /*#151416*/
+    --label: #000807; /*#c9c9c9*/
+    --white: #dfdfdf; /*#000807*/
+    --yellow: #f1c40f;
+    --calc: #000807; /*#c9c9c9*/
+    --button: #0C1A21; /*#dfdfdf'*/
+    --buttonH: #162f3b; /*#b1b0b0*/
+    --especial: #228f84; /*#979797*/
+    --button2: #1b7269; /*#b1b0b0*/
+    --especialH: #18646b; /*#bbbbbb*/
+}
+
+body {
+    background-color: var(--body);
+}
+
+.darkTheme{
+    display: block;
+    position: absolute;
+    top: 3%;
+    left: 5%;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: var(--label);
+    border-radius: 50px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    height: 22px;
+    width: 22px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: var(--yellow);
+}
+
+.fa-sun {
+    color: var(--yellow);
+}
+
+.calculator {
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 10px;
+    background-color: var(--calc);
+}
+
+table td {
+    display: inline-block;
+}
+
+.btn {
+    margin: 3px;
+    width: 50px;
+    height: 40px;
+    cursor: pointer; /*Insere efeito de cursor clicável quando passa pelos botões*/
+    border: none;
+    background-color: var(--button);
+    color: var(--white);
+    font-size: 16px;
+    transition: all 500ms ease-in-out; /*Efeito de transição/delay quando o cursor passa em cima dos botões*/
+}
+
+.btn:hover {
+    background-color: var(--buttonH);
+    /*O :hover define um efeito de mudança de cor no item selecionado*/
+}
+
+.ac {
+    background-color: var(--button2);
+}
+
+.ac:hover {
+    background-color: var(--especial);
+}
+
+.especial {
+    background-color: var(--especial);
+}
+
+.especial:hover {
+    background-color: var(--especialH);
+}
+
+.igual {
+    background-color: var(--button2);
+}
+
+.igual:hover {
+    background-color: var(--especial);
+}
+
+.result {
+    height: 100px; /*Define a altura do visor*/
+    color: var(--white);
+    text-align: right; /*Está alinhando o texto do visor a direita*/
+    font-size: 35px;
+    word-wrap: break-word; /*A propriedade word-wrap serve para quebrar o texto na margem delimitada*/
+    border-bottom: 1px solid var(--especial);
+}
